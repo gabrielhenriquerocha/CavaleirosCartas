@@ -1,7 +1,7 @@
 package extradecks;
 
 import cartas.Carta;
-import excecoes.ArrayException;
+import excecoes.ArrayCheioException;
 
 public class ExtraDeck {
 	private Carta[] extra;
@@ -15,12 +15,12 @@ public class ExtraDeck {
 
 //vou colocar o metodo inserir aq
 
-	public void inserir(Carta carta) throws ArrayException {
+	public void inserir(Carta carta) throws ArrayCheioException {
 		if (pos < 10 && this.extra[pos] == null) {
 			this.extra[pos] = carta;
 			pos++;
 		} else if (pos == 10) {
-			ArrayException eA = new ArrayException();
+			ArrayCheioException eA = new ArrayCheioException();
 			throw eA;
 		} else {
 			pos++;

@@ -3,7 +3,7 @@ package ui;
 import cartas.*;
 import decks.*;
 import duelistas.*;
-import excecoes.ArrayException;
+import excecoes.ArrayCheioException;
 import extradecks.CadastroExtraDecks;
 import extradecks.ExtraDeck;
 import extradecks.RepositorioExtraDecks;
@@ -113,7 +113,7 @@ public class Programa {
 			System.out.println("");
 
 			// se n conseguir, printa o ArrayException
-		} catch (ArrayException e1) {
+		} catch (ArrayCheioException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}

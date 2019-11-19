@@ -1,6 +1,6 @@
 package decks;
 
-import excecoes.ArrayException;
+import excecoes.ArrayCheioException;
 import excecoes.NaoEncontradoException;
 
 public class RepositorioDecksArray implements RepositorioDecks {
@@ -12,12 +12,12 @@ public class RepositorioDecksArray implements RepositorioDecks {
 		this.pos = 0;
 	}
 
-	public void inserir(Deck deck) throws ArrayException {
+	public void inserir(Deck deck) throws ArrayCheioException {
 		if (this.decks[pos] == null) {
 			this.decks[pos] = deck;
 			pos++;
 		} else if (pos > 19) {
-			ArrayException e = new ArrayException();
+			ArrayCheioException e = new ArrayCheioException();
 			throw e;
 		}
 	}

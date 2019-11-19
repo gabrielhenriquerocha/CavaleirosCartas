@@ -9,7 +9,7 @@ public class CadastroCartas {
 		this.repCartas = rep;
 	}
 	
-	public void cadastrar(Carta carta) throws IdJaCadastradoException, ArrayException, NaoEncontradoException{
+	public void cadastrar(Carta carta) throws IdJaCadastradoException, ArrayCheioException, NaoEncontradoException{
 		if(repCartas.existe(carta.getId())) {
 			throw new IdJaCadastradoException();
 		}else {

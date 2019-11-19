@@ -3,7 +3,7 @@ package duelistas;
 import excecoes.*;
 
 public interface RepositorioDuelistas {
-	public void inserir(Duelista duelista) throws ArrayException;
+	public void inserir(Duelista duelista) throws ArrayCheioException;
 
 	public void remover(int id) throws NaoEncontradoException;
 

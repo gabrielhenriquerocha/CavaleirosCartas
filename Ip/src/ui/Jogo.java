@@ -18,7 +18,7 @@ public class Jogo {
 
 	// Métodos relacionados a inserção de um objeto
 
-	public void registrar(Carta carta) throws IdJaCadastradoException, ArrayException, NaoEncontradoException {
+	public void registrar(Carta carta) throws IdJaCadastradoException, ArrayCheioException, NaoEncontradoException {
 		if (cartas.presente(carta.getId())) {
 			throw new IdJaCadastradoException();
 		} else {
@@ -26,7 +26,7 @@ public class Jogo {
 		}
 	}
 
-	public void fichar(Deck deck) throws IdJaCadastradoException, ArrayException, NaoEncontradoException {
+	public void fichar(Deck deck) throws IdJaCadastradoException, ArrayCheioException, NaoEncontradoException {
 		if (decks.presente(deck.getId())) {
 			throw new IdJaCadastradoException();
 		} else {
@@ -34,7 +34,7 @@ public class Jogo {
 		}
 	}
 
-	public void arquivar(Duelista duelista) throws IdJaCadastradoException, ArrayException, NaoEncontradoException {
+	public void arquivar(Duelista duelista) throws IdJaCadastradoException, ArrayCheioException, NaoEncontradoException {
 		if (duelistas.presente(duelista.getId())) {
 			throw new IdJaCadastradoException();
 		} else {
@@ -42,7 +42,7 @@ public class Jogo {
 		}
 	}
 
-	public void catalogar(ExtraDeck extradeck) throws IdJaCadastradoException, ArrayException, NaoEncontradoException {
+	public void catalogar(ExtraDeck extradeck) throws IdJaCadastradoException, ArrayCheioException, NaoEncontradoException {
 		if (extradecks.presente(extradeck.getId())) {
 			throw new IdJaCadastradoException();
 		} else {

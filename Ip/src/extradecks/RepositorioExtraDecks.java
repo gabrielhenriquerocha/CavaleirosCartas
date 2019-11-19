@@ -3,7 +3,7 @@ package extradecks;
 import excecoes.*;
 
 public interface RepositorioExtraDecks {
-	public void inserir(ExtraDeck extra) throws ArrayException;
+	public void inserir(ExtraDeck extra) throws ArrayCheioException;
 
 	public void remover(int id) throws NaoEncontradoException;
 

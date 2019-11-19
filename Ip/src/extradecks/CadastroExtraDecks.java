@@ -9,7 +9,7 @@ public class CadastroExtraDecks {
 		this.repExtraDeck = rep;
 	}
 	
-	public void cadastrar(ExtraDeck extradeck) throws IdJaCadastradoException, ArrayException, NaoEncontradoException{
+	public void cadastrar(ExtraDeck extradeck) throws IdJaCadastradoException, ArrayCheioException, NaoEncontradoException{
 		if(repExtraDeck.existe(extradeck.getId())) {
 			throw new IdJaCadastradoException();
 		}else {

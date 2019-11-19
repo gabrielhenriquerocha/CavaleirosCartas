@@ -10,12 +10,12 @@ public class RepositorioCartasArray implements RepositorioCartas {
 		this.cartas = new Carta[100];
 	}
 
-	public void inserir(Carta carta) throws ArrayException{
+	public void inserir(Carta carta) throws ArrayCheioException{
 		if (this.cartas[pos] == null) {
 			this.cartas[pos] = carta;
 			pos++;
 		} else if (pos == 100) {
-			ArrayException eA = new ArrayException();
+			ArrayCheioException eA = new ArrayCheioException();
 			throw eA;
 		} else {
 			pos++;

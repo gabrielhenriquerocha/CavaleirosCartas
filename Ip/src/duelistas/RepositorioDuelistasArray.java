@@ -12,12 +12,12 @@ public class RepositorioDuelistasArray implements RepositorioDuelistas {
 		this.pos = 0;
 	}
 
-	public void inserir(Duelista duelista) throws ArrayException {
+	public void inserir(Duelista duelista) throws ArrayCheioException {
 		if (this.duelistas[pos] == null) {
 			this.duelistas[pos] = duelista;
 			pos++;
 		} else if (pos > 19) {
-			ArrayException e = new ArrayException();
+			ArrayCheioException e = new ArrayCheioException();
 			throw e;
 		}
 	}

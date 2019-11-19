@@ -1,6 +1,6 @@
 package extradecks;
 
-import excecoes.ArrayException;
+import excecoes.ArrayCheioException;
 import excecoes.NaoEncontradoException;
 
 public class RepositorioExtraDecksArray implements RepositorioExtraDecks {
@@ -11,12 +11,12 @@ public class RepositorioExtraDecksArray implements RepositorioExtraDecks {
 		this.pos = 0;
 	}
 	
-	public void inserir(ExtraDeck extra) throws ArrayException {
+	public void inserir(ExtraDeck extra) throws ArrayCheioException {
 		if (this.extra[pos] == null) {
 			this.extra[pos] = extra;
 			pos++;
 		} else if (pos > 19) {
-			ArrayException e = new ArrayException();
+			ArrayCheioException e = new ArrayCheioException();
 			throw e;
 		}
 	}

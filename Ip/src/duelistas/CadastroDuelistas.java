@@ -9,7 +9,7 @@ public class CadastroDuelistas {
 		this.repDuelista = rep;
 	}
 	
-	public void cadastrar(Duelista duelista) throws IdJaCadastradoException, ArrayException, NaoEncontradoException{
+	public void cadastrar(Duelista duelista) throws IdJaCadastradoException, ArrayCheioException, NaoEncontradoException{
 		if(repDuelista.existe(duelista.getId())) {
 			throw new IdJaCadastradoException();
 		}else {

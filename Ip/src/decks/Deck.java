@@ -1,7 +1,7 @@
 package decks;
 
 import cartas.Carta;
-import excecoes.ArrayException;
+import excecoes.ArrayCheioException;
 
 public class Deck {
 	private Carta[] baralho;
@@ -14,12 +14,12 @@ public class Deck {
 		this.pos = 0;
 	}
 
-	public void inserir(Carta carta) throws ArrayException {
+	public void inserir(Carta carta) throws ArrayCheioException {
 		if (pos < 10 && this.baralho[pos] == null) {
 			this.baralho[pos] = carta;
 			pos++;
 		} else if (pos == 10) {
-			ArrayException eA = new ArrayException();
+			ArrayCheioException eA = new ArrayCheioException();
 			throw eA;
 		} else {
 			pos++;

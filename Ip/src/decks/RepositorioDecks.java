@@ -3,7 +3,7 @@ package decks;
 import excecoes.*;
 
 public interface RepositorioDecks {
-	public void inserir(Deck deck) throws ArrayException;
+	public void inserir(Deck deck) throws ArrayCheioException;
 
 	public void remover(int id) throws NaoEncontradoException;
 
