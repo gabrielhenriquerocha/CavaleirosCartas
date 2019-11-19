@@ -8,6 +8,7 @@ public abstract class Carta {
 	public Carta(String nome, String desc,int id) {
 		this.nome = nome;
 		this.desc = desc;
+		this.id = id;
 	}
 
 	public String getNome() {

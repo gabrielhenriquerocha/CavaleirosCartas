@@ -101,6 +101,7 @@ public class Programa {
 
 			System.out.println(a.getNome());
 			System.out.println(a.getDesc());
+			System.out.println(a.getId());
 			System.out.println("");
 			System.out.println(c.getDesc());
 			System.out.println("");
