@@ -1,6 +1,6 @@
 package cartas;
 
-import utilitarios.*;
+import excecoes.*;
 
 public class RepositorioCartasArray implements RepositorioCartas {
 	private Carta[] cartas;

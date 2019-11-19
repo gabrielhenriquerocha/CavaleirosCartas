@@ -1,6 +1,6 @@
 package duelistas;
 
-import utilitarios.*;
+import excecoes.*;
 
 public interface RepositorioDuelistas {
 	public void inserir(Duelista duelista) throws ArrayException;

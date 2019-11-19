@@ -1,4 +1,4 @@
-package utilitarios;
+package excecoes;
 
 public class ArrayException extends Exception {
 

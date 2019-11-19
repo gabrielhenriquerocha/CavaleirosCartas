@@ -1,8 +1,7 @@
 package extradecks;
 
 import cartas.Carta;
-
-import utilitarios.ArrayException;
+import excecoes.ArrayException;
 
 public class ExtraDeck {
 	private Carta[] extra;

@@ -1,4 +1,4 @@
-package utilitarios;
+package excecoes;
 
 public class IdJaCadastradoException extends Exception {
 	public IdJaCadastradoException() {

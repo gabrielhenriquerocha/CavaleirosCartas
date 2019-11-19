@@ -1,7 +1,7 @@
 package extradecks;
 
-import utilitarios.ArrayException;
-import utilitarios.NaoEncontradoException;
+import excecoes.ArrayException;
+import excecoes.NaoEncontradoException;
 
 public class RepositorioExtraDecksArray implements RepositorioExtraDecks {
 	private ExtraDeck[] extra;

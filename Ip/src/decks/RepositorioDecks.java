@@ -1,6 +1,6 @@
 package decks;
 
-import utilitarios.*;
+import excecoes.*;
 
 public interface RepositorioDecks {
 	public void inserir(Deck deck) throws ArrayException;

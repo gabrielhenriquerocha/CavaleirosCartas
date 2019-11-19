@@ -1,7 +1,7 @@
 
 package duelistas;
 
-import utilitarios.NaoEncontradoException;
+import excecoes.NaoEncontradoException;
 
 public class RepositorioDuelistasLista implements RepositorioDuelistas {
 

@@ -1,6 +1,6 @@
 package extradecks;
 
-import utilitarios.*;
+import excecoes.*;
 
 public interface RepositorioExtraDecks {
 	public void inserir(ExtraDeck extra) throws ArrayException;

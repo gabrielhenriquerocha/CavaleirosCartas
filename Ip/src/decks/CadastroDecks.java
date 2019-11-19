@@ -1,6 +1,6 @@
 package decks;
 
-import utilitarios.*;
+import excecoes.*;
 
 public class CadastroDecks {
 	private RepositorioDecks repDeck;

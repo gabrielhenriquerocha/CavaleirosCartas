@@ -1,6 +1,6 @@
 package decks;
 
-import utilitarios.NaoEncontradoException;
+import excecoes.NaoEncontradoException;
 
 public class RepositorioDecksLista implements RepositorioDecks {
 	private Deck deck;

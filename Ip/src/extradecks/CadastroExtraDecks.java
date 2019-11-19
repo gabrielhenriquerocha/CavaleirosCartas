@@ -1,6 +1,6 @@
 package extradecks;
 
-import utilitarios.*;
+import excecoes.*;
 
 public class CadastroExtraDecks {
 	private RepositorioExtraDecks repExtraDeck;

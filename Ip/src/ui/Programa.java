@@ -3,12 +3,12 @@ package ui;
 import cartas.*;
 import decks.*;
 import duelistas.*;
+import excecoes.ArrayException;
 import extradecks.CadastroExtraDecks;
 import extradecks.ExtraDeck;
 import extradecks.RepositorioExtraDecks;
 import extradecks.RepositorioExtraDecksArray;
 import extradecks.RepositorioExtraDecksLista;
-import utilitarios.ArrayException;
 
 public class Programa {
 

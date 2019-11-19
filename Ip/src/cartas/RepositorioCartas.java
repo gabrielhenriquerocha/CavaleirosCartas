@@ -1,5 +1,5 @@
 package cartas;
-import utilitarios.*;
+import excecoes.*;
 public interface RepositorioCartas {
     public void inserir(Carta carta) throws ArrayException;
     public void remover(int id) throws NaoEncontradoException;

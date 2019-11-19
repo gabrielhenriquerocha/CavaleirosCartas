@@ -1,6 +1,6 @@
 package extradecks;
 
-import utilitarios.NaoEncontradoException;
+import excecoes.NaoEncontradoException;
 
 public class RepositorioExtraDecksLista implements RepositorioExtraDecks {
 	private ExtraDeck extra;

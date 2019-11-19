@@ -1,6 +1,6 @@
 package duelistas;
 
-import utilitarios.*;
+import excecoes.*;
 
 public class CadastroDuelistas {
 	private RepositorioDuelistas repDuelista;

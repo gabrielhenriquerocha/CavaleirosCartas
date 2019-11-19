@@ -1,7 +1,7 @@
 package decks;
 
 import cartas.Carta;
-import utilitarios.ArrayException;
+import excecoes.ArrayException;
 
 public class Deck {
 	private Carta[] baralho;

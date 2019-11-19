@@ -1,6 +1,6 @@
 package cartas;
 
-import utilitarios.*;
+import excecoes.*;
 
 public class CadastroCartas {
 	private RepositorioCartas repCartas;

@@ -6,9 +6,9 @@ import decks.CadastroDecks;
 import decks.Deck;
 import duelistas.CadastroDuelistas;
 import duelistas.Duelista;
+import excecoes.*;
 import extradecks.CadastroExtraDecks;
 import extradecks.ExtraDeck;
-import utilitarios.*;
 
 public class Jogo {
 	private CadastroCartas cartas;
