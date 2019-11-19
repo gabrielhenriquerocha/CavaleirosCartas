@@ -4,7 +4,7 @@ public class ArrayException extends Exception {
 
 	public ArrayException() {
 
-		super("Passou do limite do Array");
+		super("Não ha mais espaço livre no array");
 
 	}
 

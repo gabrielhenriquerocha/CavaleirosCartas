@@ -4,17 +4,17 @@ public class CartaCavaleiro extends Carta {
 	private int atk;
 	private int def;
 	private int estrela;
-	private String raridade;
-	private String tipo;
+	private String classificacao;
+	private String constelacao;
 
-	public CartaCavaleiro(String nome, String desc, int atk, int def, int estrela, String raridade, String tipo,
+	public CartaCavaleiro(String nome, String desc, int atk, int def, int estrela, String classificacao, String constelacao,
 			int id) {
 		super(nome, desc, id);
 		this.atk = atk;
 		this.def = def;
 		this.estrela = estrela;
-		this.raridade = raridade;
-		this.tipo = tipo;
+		this.classificacao = classificacao;
+		this.constelacao = constelacao;
 	}
 
 	public void setATQ(int atk) {
@@ -26,19 +26,19 @@ public class CartaCavaleiro extends Carta {
 	}
 
 	public String getDesc() {
-		return "Descrição do monstro: " + desc;
+		return "Descrição do cavaleiro: " + desc;
 	}
 
 	public void setEstrela(int estrela) {
 		this.estrela = estrela;
 	}
 
-	public void setRaridade(String raridade) {
-		this.raridade = raridade;
+	public void setClassificacao(String classificacao) {
+		this.classificacao = classificacao;
 	}
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setConstelacao(String constelacao) {
+		this.constelacao = constelacao;
 	}
 
 	public int getATK() {
@@ -53,12 +53,12 @@ public class CartaCavaleiro extends Carta {
 		return this.estrela;
 	}
 
-	public String getRaridade() {
-		return this.raridade;
+	public String getClassificacao() {
+		return this.classificacao;
 	}
 
-	public String getTipo() {
-		return this.tipo;
+	public String getConstelacao() {
+		return this.constelacao;
 	}
 
 }

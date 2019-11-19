@@ -17,54 +17,53 @@ public class Programa {
 
 		// Repositorios e cadastro para Carta
 		RepositorioCartas repArray = new RepositorioCartasArray();
-		RepositorioCartas repLista = new RepositorioCartasLista();
-		// CadastroCartas cadCarta= new CadastroCartas (repArray);
+		RepositorioCartas repLista = new RepositorioCartasLista();		
 		CadastroCartas cadCartaLista = new CadastroCartas(repLista);
 
 		// Repositorios e cadastro para Deck
 		RepositorioDecks repDecksArray = new RepositorioDecksArray();
-		RepositorioDecks repDecksLista = new RepositorioDecksLista();
-		// CadastroDecks cadDeck= new CadastroDecks (repDecksArray);
+		RepositorioDecks repDecksLista = new RepositorioDecksLista();	
 		CadastroDecks cadDeckLista = new CadastroDecks(repDecksLista);
-
+		
+		//Repositorios e cadastro para Duelistas
 		RepositorioDuelistas repArrayD = new RepositorioDuelistasArray();
 		RepositorioDuelistas repListaD = new RepositorioDuelistasLista();
-
 		CadastroDuelistas cadDuelistasLista = new CadastroDuelistas(repListaD);
 		
 		
-		// Repositorios e cadastro para Deck
+		// Repositorios e cadastro para ExtraDeck
 		RepositorioExtraDecks repExtraDecksArray = new RepositorioExtraDecksArray();
-		RepositorioExtraDecks repExtraDecksLista = new RepositorioExtraDecksLista();
-			// CadastroDecks cadDeck= new CadastroDecks (repDecksArray);
+		RepositorioExtraDecks repExtraDecksLista = new RepositorioExtraDecksLista();		
 		CadastroExtraDecks cadExtraDeckLista = new CadastroExtraDecks(repExtraDecksLista);
 
 		// Cartas criadas para teste
-		Carta a = new CartaCavaleiro("Ymir",
-				"Ymir foi o primeiro ser vivo criado a partir do gelo mÃ¡gico de Ginungagap.", 2400, 1585, 6, "Rara",
-				"Besta-Guerreira", 213);
-		Carta b = new CartaCavaleiro("Tyrael", "Arcanjo da JustiÃ§a, defensor do santuÃ¡rio e da humanidade", 3000, 2500,
-				9, "Super-Rara", "Anjo", 124);
-		Carta c = new CartaPoder("Tempestade Nulificadora",
-				"Todos os monstros do tipo MÃ¡quina tÃªm seu ataque reduzido em 500 pontos", 523);
-		Carta d = new CartaEspectroHades("Parede Espelhada",
-				"Cada um dos monstros do seu oponente que conduziu um ataque enquanto este card estava com a face para cima no campo tem seu ATK diminuÃ­do pela metade enquanto este card permanecer no campo. Durante cada uma das suas Fases de Apoio, pague 2000 Pontos de Vida ou destrua este card. ",
+		Carta a = new CartaCavaleiro("Seiya",
+				"Caracterizado principalmente por nunca desistir de lutar em qualquer situação", 2400, 1585, 6, "Cavaleiro de Bronze",
+				"Pégaso", 213);
+		Carta b = new CartaCavaleiro("Shiryu", "Shiryu é o mais calmo e reservado perante os outros cavaleiros", 3000, 2500,
+				9, "Cavaleiros de Bronze", "Draco", 124);
+		Carta c = new CartaPoder("Meteoro de Pégaso",
+				" Concentrando a cosmo-energia, o Cavaleiro dispara 100 socos por segundos, a velocidade do som, que assumem a forma de meteoros/estrelas cadentes", 523);
+		Carta d = new CartaEspectroHades("Redemoinho Esmagador",
+				"Caronte concentra seu Cosmo entre seus punhos, em seguida ele dispara uma capsula ou vórtice de energia poderosa. ",
 				235);
-		Carta e = new CartaPoder("Espanador de Penas da Harpia",
-				"Destrua todos os Cards de Magia e Armadilha que seu oponente controla.", 243);
-		Carta f = new CartaCavaleiro("Lady Harpia",
-				"Este animal alado com forma humana, embora agrade aos olhos, Ã© absolutamente letal em batalha.", 1300,
-				1400, 4, "Normal", "Besta-Alada", 734);
-		Carta g = new CartaPoder("Buraco Negro", "Destrua todos os monstros no campo.", 773);
-		Carta h = new CartaEspectroHades("Buraco Armadilha de Espinhos",
-				"Quando um monstro do oponente que foi Invocado por InvocaÃ§Ã£o-Normal ou Especial neste turno declarar um ataque: destrua o monstro atacante e, se isso acontecer, cause dano ao seu oponente igual Ã  metade do ATK original desse monstro.",
+		Carta e = new CartaPoder("Cólera do Dragão",
+				"Emanando um Cosmo Shiryu dispara uma rajada na forma de dragão que, se acerta, leva o oponente pelos ares.", 243);
+		Carta f = new CartaCavaleiro("Hyoga",
+				"É arrogante, e bastante orgulhoso de sua força e seu poder, não hesitando em demonstrar tais qualidades.", 1300,
+				1400, 4, "Cavaleiros de Bronze", "Cygnus", 734);
+		
+		Carta g = new CartaPoder("Pó de Diamante", "Consiste em criar uma grande quantidade de finos cristais de gelo que avançam em alta velocidade sobre seu adversário.", 773);
+		
+		Carta h = new CartaEspectroHades("Balança da Maldição",
+				"Faraó toca com sua harpa uma melodia obscura. O inimigo perde os movimentos de seu corpo, em seguida a área onde Faraó e seu inimigo estão, é tomada de várias paredes antigas com escrituras egípicias.",
 				212);
-		Carta i = new CartaPoder("Tornado Gigante",
-				"Devolva todos os Cards de Magia e Armadilha do campo para Ã  mÃ£o.", 921);
-		Carta j = new CartaEspectroHades("OpressÃ£o Real",
-				"Ambos jogadores podem pagar 800 LPs para negar o Special Summon de um ou mais monstros ou o efeito que Special Summons monstros, e destruir aquelas cartas.",
+		Carta i = new CartaPoder("Ave Fênix",
+				"Técnica mais poderosa do Cavaleiro de Fênix. Ikki usa a palma das mãos para criar um sopro furioso de ar em chamas, jogando o inimigo pelos ares.", 921);
+		Carta j = new CartaEspectroHades("Reencarnação",
+				"lança uma esfera de cosmos que imobiliza o adversário que em seguida passa a ver todos os pecados que cometeu durante a vida.",
 				635);
-		Carta x = new CartaPoder("aaaaa", "sassss", 987);
+		Carta x = new CartaPoder("Corrente de Andrômeda", "correntes avançam para cima de sua vítima de uma maneira veloz e objetiva, visando acertá-lo por algum ângulo.", 987);
 	
 		
 
