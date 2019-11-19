@@ -71,12 +71,15 @@ public class Programa {
 				"correntes avançam para cima de sua vítima de uma maneira veloz e objetiva, visando acertá-lo por algum ângulo.",
 				987);
 
+		String nome = "Gabriel";
+		int idade = 18;
+
 		// caso pra testar as excecoes
-		//Carta test = new CartaPoder("aaaa", "aaa", 999);
+		// Carta test = new CartaPoder("aaaa", "aaa", 999);
 
 		Deck deck1 = new Deck(1);
 		ExtraDeck deck2 = new ExtraDeck(null, 2);
-		Duelista duelista1 = new Duelista(null, 1, deck1, deck2);		
+		Duelista duelista1 = new Duelista(null, 0, null, null);
 
 		// tente
 		try {
@@ -91,19 +94,25 @@ public class Programa {
 			deck1.inserir(i);
 			deck1.inserir(j);
 			deck2.inserir(x);
-			//caso teste
-			//deck1.inserir(test);
-			
+			duelista1.inserir(nome, idade, deck1, deck2);
+
+			// caso teste
+			// deck1.inserir(test);
+
 			System.out.println(a.getNome());
 			System.out.println(a.getDesc());
 			System.out.println("");
 			System.out.println(c.getDesc());
 			System.out.println("");
 			System.out.println(d.getDesc());
-			System.out.println("");			
+			System.out.println("");
 			System.out.println(x.getDesc());
-			
-		// se n conseguir, printa o ArrayException
+			System.out.println("");
+			System.out.println(duelista1.getNome());
+			System.out.println(duelista1.getId());
+			System.out.println("");
+
+			// se n conseguir, printa o ArrayException
 		} catch (ArrayException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

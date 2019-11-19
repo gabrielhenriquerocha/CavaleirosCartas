@@ -14,7 +14,7 @@ public class ExtraDeck {
 	}
 
 //vou colocar o metodo inserir aq
-// se der merda eu apago
+
 	public void inserir(Carta carta) throws ArrayException {
 		if (pos < 10 && this.extra[pos] == null) {
 			this.extra[pos] = carta;
