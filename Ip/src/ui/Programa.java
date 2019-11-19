@@ -17,61 +17,65 @@ public class Programa {
 
 		// Repositorios e cadastro para Carta
 		RepositorioCartas repArray = new RepositorioCartasArray();
-		RepositorioCartas repLista = new RepositorioCartasLista();		
+		RepositorioCartas repLista = new RepositorioCartasLista();
 		CadastroCartas cadCartaLista = new CadastroCartas(repLista);
 
 		// Repositorios e cadastro para Deck
 		RepositorioDecks repDecksArray = new RepositorioDecksArray();
-		RepositorioDecks repDecksLista = new RepositorioDecksLista();	
+		RepositorioDecks repDecksLista = new RepositorioDecksLista();
 		CadastroDecks cadDeckLista = new CadastroDecks(repDecksLista);
-		
-		//Repositorios e cadastro para Duelistas
+
+		// Repositorios e cadastro para Duelistas
 		RepositorioDuelistas repArrayD = new RepositorioDuelistasArray();
 		RepositorioDuelistas repListaD = new RepositorioDuelistasLista();
 		CadastroDuelistas cadDuelistasLista = new CadastroDuelistas(repListaD);
-		
-		
+
 		// Repositorios e cadastro para ExtraDeck
 		RepositorioExtraDecks repExtraDecksArray = new RepositorioExtraDecksArray();
-		RepositorioExtraDecks repExtraDecksLista = new RepositorioExtraDecksLista();		
+		RepositorioExtraDecks repExtraDecksLista = new RepositorioExtraDecksLista();
 		CadastroExtraDecks cadExtraDeckLista = new CadastroExtraDecks(repExtraDecksLista);
 
 		// Cartas criadas para teste
 		Carta a = new CartaCavaleiro("Seiya",
-				"Caracterizado principalmente por nunca desistir de lutar em qualquer situação", 2400, 1585, 6, "Cavaleiro de Bronze",
-				"Pégaso", 213);
-		Carta b = new CartaCavaleiro("Shiryu", "Shiryu é o mais calmo e reservado perante os outros cavaleiros", 3000, 2500,
-				9, "Cavaleiros de Bronze", "Draco", 124);
+				"Caracterizado principalmente por nunca desistir de lutar em qualquer situação", 2400, 1585, 6,
+				"Cavaleiro de Bronze", "Pégaso", 213);
+		Carta b = new CartaCavaleiro("Shiryu", "Shiryu é o mais calmo e reservado perante os outros cavaleiros", 3000,
+				2500, 9, "Cavaleiros de Bronze", "Draco", 124);
 		Carta c = new CartaPoder("Meteoro de Pégaso",
-				" Concentrando a cosmo-energia, o Cavaleiro dispara 100 socos por segundos, a velocidade do som, que assumem a forma de meteoros/estrelas cadentes", 523);
+				" Concentrando a cosmo-energia, o Cavaleiro dispara 100 socos por segundos, a velocidade do som, que assumem a forma de meteoros/estrelas cadentes",
+				523);
 		Carta d = new CartaEspectroHades("Redemoinho Esmagador",
 				"Caronte concentra seu Cosmo entre seus punhos, em seguida ele dispara uma capsula ou vórtice de energia poderosa. ",
 				235);
 		Carta e = new CartaPoder("Cólera do Dragão",
-				"Emanando um Cosmo Shiryu dispara uma rajada na forma de dragão que, se acerta, leva o oponente pelos ares.", 243);
+				"Emanando um Cosmo Shiryu dispara uma rajada na forma de dragão que, se acerta, leva o oponente pelos ares.",
+				243);
 		Carta f = new CartaCavaleiro("Hyoga",
-				"É arrogante, e bastante orgulhoso de sua força e seu poder, não hesitando em demonstrar tais qualidades.", 1300,
-				1400, 4, "Cavaleiros de Bronze", "Cygnus", 734);
-		
-		Carta g = new CartaPoder("Pó de Diamante", "Consiste em criar uma grande quantidade de finos cristais de gelo que avançam em alta velocidade sobre seu adversário.", 773);
-		
+				"É arrogante, e bastante orgulhoso de sua força e seu poder, não hesitando em demonstrar tais qualidades.",
+				1300, 1400, 4, "Cavaleiros de Bronze", "Cygnus", 734);
+
+		Carta g = new CartaPoder("Pó de Diamante",
+				"Consiste em criar uma grande quantidade de finos cristais de gelo que avançam em alta velocidade sobre seu adversário.",
+				773);
+
 		Carta h = new CartaEspectroHades("Balança da Maldição",
 				"Faraó toca com sua harpa uma melodia obscura. O inimigo perde os movimentos de seu corpo, em seguida a área onde Faraó e seu inimigo estão, é tomada de várias paredes antigas com escrituras egípicias.",
 				212);
 		Carta i = new CartaPoder("Ave Fênix",
-				"Técnica mais poderosa do Cavaleiro de Fênix. Ikki usa a palma das mãos para criar um sopro furioso de ar em chamas, jogando o inimigo pelos ares.", 921);
+				"Técnica mais poderosa do Cavaleiro de Fênix. Ikki usa a palma das mãos para criar um sopro furioso de ar em chamas, jogando o inimigo pelos ares.",
+				921);
 		Carta j = new CartaEspectroHades("Reencarnação",
 				"lança uma esfera de cosmos que imobiliza o adversário que em seguida passa a ver todos os pecados que cometeu durante a vida.",
 				635);
-		Carta x = new CartaPoder("Corrente de Andrômeda", "correntes avançam para cima de sua vítima de uma maneira veloz e objetiva, visando acertá-lo por algum ângulo.", 987);
-	
-		
+		Carta x = new CartaPoder("Corrente de Andrômeda",
+				"correntes avançam para cima de sua vítima de uma maneira veloz e objetiva, visando acertá-lo por algum ângulo.",
+				987);
 
 		Deck deck1 = new Deck(1);
 		ExtraDeck deck2 = new ExtraDeck(null, 2);
 		Duelista duelista1 = new Duelista(null, 1, deck1, deck2);
-		
-		//tente
+
+		// tente
 		try {
 			deck1.inserir(a);
 			deck1.inserir(b);
@@ -84,13 +88,13 @@ public class Programa {
 			deck1.inserir(i);
 			deck1.inserir(j);
 			deck2.inserir(x);
-			
+
 			// Caso teste para atingir o max do array
 			// deck1.inserir(j);
 			System.out.println(a.getDesc());
 			System.out.println(c.getDesc());
 			System.out.println(d.getDesc());
-		//se n conseguir, printa o ArrayException
+			// se n conseguir, printa o ArrayException
 		} catch (ArrayException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
