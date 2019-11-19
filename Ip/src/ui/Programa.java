@@ -37,10 +37,10 @@ public class Programa {
 
 		// Cartas criadas para teste
 		Carta a = new CartaCavaleiro("Seiya",
-				"Caracterizado principalmente por nunca desistir de lutar em qualquer situação", 2400, 1585, 6,
-				"Cavaleiro de Bronze", "Pégaso", 213);
+				"Caracterizado principalmente por nunca desistir de lutar em qualquer situação", 2400, 1585,
+				"Sagitário", "Cavaleiro de Bronze", "Pégaso", 213);
 		Carta b = new CartaCavaleiro("Shiryu", "Shiryu é o mais calmo e reservado perante os outros cavaleiros", 3000,
-				2500, 9, "Cavaleiros de Bronze", "Draco", 124);
+				2500, "Libra", "Cavaleiros de Bronze", "Draco", 124);
 		Carta c = new CartaPoder("Meteoro de Pégaso",
 				" Concentrando a cosmo-energia, o Cavaleiro dispara 100 socos por segundos, a velocidade do som, que assumem a forma de meteoros/estrelas cadentes",
 				523);
@@ -52,7 +52,7 @@ public class Programa {
 				243);
 		Carta f = new CartaCavaleiro("Hyoga",
 				"É arrogante, e bastante orgulhoso de sua força e seu poder, não hesitando em demonstrar tais qualidades.",
-				1300, 1400, 4, "Cavaleiros de Bronze", "Cygnus", 734);
+				1300, 1400, "Aquário", "Cavaleiros de Bronze", "Cygnus", 734);
 
 		Carta g = new CartaPoder("Pó de Diamante",
 				"Consiste em criar uma grande quantidade de finos cristais de gelo que avançam em alta velocidade sobre seu adversário.",

@@ -3,16 +3,16 @@ package cartas;
 public class CartaCavaleiro extends Carta {
 	private int atk;
 	private int def;
-	private int estrela;
+	private String signo;
 	private String classificacao;
 	private String constelacao;
 
-	public CartaCavaleiro(String nome, String desc, int atk, int def, int estrela, String classificacao, String constelacao,
+	public CartaCavaleiro(String nome, String desc, int atk, int def, String signo, String classificacao, String constelacao,
 			int id) {
 		super(nome, desc, id);
 		this.atk = atk;
 		this.def = def;
-		this.estrela = estrela;
+		this.signo = signo;
 		this.classificacao = classificacao;
 		this.constelacao = constelacao;
 	}
@@ -29,8 +29,8 @@ public class CartaCavaleiro extends Carta {
 		return "Descrição do cavaleiro: " + desc;
 	}
 
-	public void setEstrela(int estrela) {
-		this.estrela = estrela;
+	public void setSigno(String signo) {
+		this.signo = signo;
 	}
 
 	public void setClassificacao(String classificacao) {
@@ -49,8 +49,8 @@ public class CartaCavaleiro extends Carta {
 		return this.def;
 	}
 
-	public int getEstrela() {
-		return this.estrela;
+	public String getSigno() {
+		return this.signo;
 	}
 
 	public String getClassificacao() {
