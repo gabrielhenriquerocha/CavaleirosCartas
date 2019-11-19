@@ -42,7 +42,7 @@ public class Programa {
 		Carta b = new CartaCavaleiro("Shiryu", "Shiryu é o mais calmo e reservado perante os outros cavaleiros", 3000,
 				2500, "Libra", "Cavaleiros de Bronze", "Draco", 124);
 		Carta c = new CartaPoder("Meteoro de Pégaso",
-				" Concentrando a cosmo-energia, o Cavaleiro dispara 100 socos por segundos, a velocidade do som, que assumem a forma de meteoros/estrelas cadentes",
+				" Concentrando a cosmo-energia, o Cavaleiro dispara 100 socos por segundos, a velocidade do som, que assumem a forma de meteoros/estrelas cadentes.",
 				523);
 		Carta d = new CartaEspectroHades("Redemoinho Esmagador",
 				"Caronte concentra seu Cosmo entre seus punhos, em seguida ele dispara uma capsula ou vórtice de energia poderosa. ",
@@ -104,6 +104,7 @@ public class Programa {
 			System.out.println(a.getId());
 			System.out.println("");
 			System.out.println(c.getDesc());
+			System.out.println(c.getId());
 			System.out.println("");
 			System.out.println(d.getDesc());
 			System.out.println("");
