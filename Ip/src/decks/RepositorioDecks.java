@@ -11,5 +11,5 @@ public interface RepositorioDecks {
 
 	public void atualizar(int id, Deck deck) throws NaoEncontradoException;
 
-	public boolean existe(int id) throws NaoEncontradoException;
+	public boolean existe(int id);
 }
