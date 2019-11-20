@@ -1,5 +1,5 @@
 package cartas;
-
+//mudanças serão feitas
 public class CartaCavaleiro extends Carta {
 	private int atk;
 	private int def;
