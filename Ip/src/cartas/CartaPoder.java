@@ -6,7 +6,8 @@ public class CartaPoder extends Carta {
 		super(nome, desc, id);
 	}
 
-	public String getDesc() {
-		return "Efeito mágico da carta: " + desc;
-	}
+	//Implementação do método abstrato
+    public String getDesc() {
+        return "Efeito mágico da carta: " + this.desc;
+    }
 }

@@ -8,9 +8,9 @@ public class CartaEspectroHades extends Carta {
 		super(nome,desc, id);
 	}
 	
-	public String getDesc() {
-		return "O efeito sombrio da carta: " + desc;
-	}
-	
+	//Implementação do método abstrato
+		public String getDesc() {
+			return "Efeito sombriu da carta: " + this.desc;
+		}
 
 }

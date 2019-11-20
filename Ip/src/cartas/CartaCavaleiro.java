@@ -25,9 +25,10 @@ public class CartaCavaleiro extends Carta {
 		this.def = def;
 	}
 
-	public String getDesc() {
-		return "Descrição do cavaleiro: " + desc;
-	}
+	//Implementação do método abstrato
+    public String getDesc()  {
+        return "Descrição do monstro: " + this.desc;
+    }
 
 	public void setSigno(String signo) {
 		this.signo = signo;

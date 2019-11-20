@@ -4,26 +4,27 @@ import excecoes.*;
 
 public class RepositorioCartasArray implements RepositorioCartas {
 	private Carta[] cartas;
-	private int pos = 0;
 
 	public RepositorioCartasArray() {
 		this.cartas = new Carta[100];
 	}
-
-	public void inserir(Carta carta) throws ArrayCheioException{
-		if (this.cartas[pos] == null) {
-			this.cartas[pos] = carta;
-			pos++;
-		} else if (pos == 100) {
-			ArrayCheioException eA = new ArrayCheioException();
-			throw eA;
-		} else {
-			pos++;
-			inserir(carta);
+	
+	//Método que insere o objeto no repositorio
+	public void inserir(Carta carta) throws ArrayCheioException {
+		boolean aux = false;
+		for (int k = 0; k < this.cartas.length && !aux; k++) {
+			if (this.cartas[k] == null) {
+				this.cartas[k] = carta;
+				aux = true;
+			}
+		}
+		if (!aux) {
+			ArrayCheioException e = new ArrayCheioException();
+			throw e;
 		}
 	}
-
-	public void remover (int id) throws NaoEncontradoException {
+	//Método que remove o objeto no repositorio
+	public void remover(int id) throws NaoEncontradoException {
 		if (!existe(id)) {
 			throw new NaoEncontradoException();
 		} else {
@@ -35,7 +36,7 @@ public class RepositorioCartasArray implements RepositorioCartas {
 		}
 
 	}
-
+	//Método que retorna ou não um objeto dado o ID
 	public Carta procurar(int id) throws NaoEncontradoException {
 		Carta aux = null;
 		boolean achou = false;
@@ -55,11 +56,10 @@ public class RepositorioCartasArray implements RepositorioCartas {
 		}
 
 	}
-
-	@Override
+	//Método que substitui um objeto dado ID por outro objeto passado como parametro no repositorio
 	public void atualizar(int id, Carta carta) throws NaoEncontradoException {
 		boolean achou = false;
-		for (int k = 0; k < cartas.length; k++) {
+		for (int k = 0; k < this.cartas.length && !achou; k++) {
 			if (this.cartas[k] != null && this.cartas[k].getId() == id) {
 				this.cartas[k] = carta;
 				achou = true;
@@ -69,20 +69,26 @@ public class RepositorioCartasArray implements RepositorioCartas {
 			NaoEncontradoException e = new NaoEncontradoException();
 			throw e;
 		}
-	}	
-
-	@Override
-	public boolean existe(int id) throws NaoEncontradoException {
+	}
+	//Método que retorna um boolean indicando se o objeto esta ou não no repositorio
+	public boolean existe(int id) {
 		boolean achou = false;
-		for (int k = 0; k < cartas.length; k++) {
+		for (int k = 0; k < this.cartas.length && !achou; k++) {
 			if (this.cartas[k] != null && this.cartas[k].getId() == id) {
 				achou = true;
 			}
 		}
-		if (!achou) {
-			NaoEncontradoException e = new NaoEncontradoException();
-			throw e;
-		}
 		return achou;
+	}
+
+	// Método que retorna todos os objetos do repositório
+	public Carta[] retornaTudo() {
+		Carta[] aux = new Carta[100];
+		for (int k = 0; k < cartas.length; k++) {
+			if (this.cartas[k] != null) {
+				aux[k] = this.cartas[k];
+			}
+		}
+		return aux;
 	}
 }

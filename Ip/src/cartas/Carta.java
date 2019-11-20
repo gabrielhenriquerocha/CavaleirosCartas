@@ -10,6 +10,10 @@ public abstract class Carta {
 		this.desc = desc;
 		this.id = id;
 	}
+	
+	public void setDesc(String desc) {
+    	this.desc = desc;
+    }
 
 	public String getNome() {
 		return this.nome;
@@ -26,7 +30,8 @@ public abstract class Carta {
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	
+	//Método abstrato, toda classe que herdar de Carta deve implementar esse método, seja qual for a implementação
 	public abstract String getDesc();
 	 
 }
