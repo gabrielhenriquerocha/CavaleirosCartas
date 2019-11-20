@@ -11,6 +11,7 @@ import excecoes.ExtraDeckNaoCadastradoException;
 import excecoes.IdJaCadastradoException;
 import excecoes.NaoEncontradoException;
 
+
 public class Programa {
 
 	public static void main(String[] args) {
@@ -135,9 +136,9 @@ public class Programa {
 		}
 
 		Jogo fachada = new Jogo(cadCartas, cadDecks, cadDuelistas, cadExtraDecks);
-		Duelista duelista = new Duelista("Jorge", 1, deck1, extradeck1);
-		Duelista duelista2 = new Duelista("Matheus", 325253, deck1, extradeck1);
-		Duelista duelista3 = new Duelista("Vitor", 845, deck1, extradeck1);
+		Duelista duelista = new Duelista("Gabriel", 1, deck1, extradeck1);
+		Duelista duelista2 = new Duelista("Jhenne", 325253, deck1, extradeck1);
+		Duelista duelista3 = new Duelista("Thiago", 845, deck1, extradeck1);
 		try {
 			// Adicionando cartas no repositorio
 			fachada.registrarCarta(a);

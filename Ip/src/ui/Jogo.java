@@ -6,6 +6,7 @@ import duelistas.*;
 import extradecks.*;
 import excecoes.*;
 
+
 public class Jogo {
 	private CadastroCartas cadCartas;
 	private CadastroDecks cadDecks;
