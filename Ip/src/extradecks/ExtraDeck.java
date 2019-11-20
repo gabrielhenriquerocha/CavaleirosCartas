@@ -1,33 +1,53 @@
 package extradecks;
 
 import cartas.Carta;
-import excecoes.ArrayCheioException;
+import excecoes.*;
 
 public class ExtraDeck {
 	private Carta[] extra;
 	private int id;
-	private int pos;
-
-	public ExtraDeck(Carta[] extra, int id) {
+	public ExtraDeck(int id) {
 		this.extra = new Carta[10];
 		this.id = id;
 	}
 
-//vou colocar o metodo inserir aq
-
 	public void inserir(Carta carta) throws ArrayCheioException {
-		if (pos < 10 && this.extra[pos] == null) {
-			this.extra[pos] = carta;
-			pos++;
-		} else if (pos == 10) {
-			ArrayCheioException eA = new ArrayCheioException();
-			throw eA;
-		} else {
-			pos++;
-			inserir(carta);
+		boolean aux = false;
+		for (int k = 0; k < this.extra.length && !aux; k++) {
+			if (this.extra[k] == null) {
+				this.extra[k] = carta;
+				aux = true;
+			}
+		}
+		if(!aux) {
+			ArrayCheioException e = new ArrayCheioException();
+			throw e;
 		}
 	}
+	
+	public void remover(int id) throws NaoEncontradoException {
 
+		if (!existe(id)) {
+			throw new NaoEncontradoException();
+		} else {
+			for (int k = 0; k < this.extra.length; k++) {
+				if (this.extra[k] != null && this.extra[k].getId() == id) {
+					this.extra[k] = null;
+				}
+			}
+		}
+	}
+	
+	public boolean existe(int id) {
+		boolean achou = false;
+		for (int k = 0; k < this.extra.length; k++) {
+			if (this.extra[k] != null && this.extra[k].getId() == id) {
+				achou = true;
+			}
+		}
+		return achou;
+	}
+	
 	public Carta[] getExtra() {
 		return this.extra;
 	}

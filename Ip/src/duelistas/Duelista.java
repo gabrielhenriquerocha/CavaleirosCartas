@@ -16,14 +16,6 @@ public class Duelista {
 		this.extra = extra;
 	}
 
-	public void inserir(String nome, int idade, Deck deck1, ExtraDeck deck2) {
-		this.nome = nome;
-		this.id = idade;
-		this.deck = deck1;
-		this.extra = deck2;
-
-	}
-
 	public void setExtra(ExtraDeck extra) {
 		this.extra = extra;
 	}
@@ -55,5 +47,4 @@ public class Duelista {
 	public void setDeck(Deck deck) {
 		this.deck = deck;
 	}
-
 }

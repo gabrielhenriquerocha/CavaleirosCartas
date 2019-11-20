@@ -1,188 +1,254 @@
 package ui;
 
-import cartas.CadastroCartas;
-import cartas.Carta;
-import decks.CadastroDecks;
-import decks.Deck;
-import duelistas.CadastroDuelistas;
-import duelistas.Duelista;
+import cartas.*;
+import decks.*;
+import duelistas.*;
+import extradecks.*;
 import excecoes.*;
-import extradecks.CadastroExtraDecks;
-import extradecks.ExtraDeck;
 
 public class Jogo {
-	private CadastroCartas cartas;
-	private CadastroDecks decks;
-	private CadastroDuelistas duelistas;
-	private CadastroExtraDecks extradecks;
+	private CadastroCartas cadCartas;
+	private CadastroDecks cadDecks;
+	private CadastroDuelistas cadDuelistas;
+	private CadastroExtraDecks cadExtraDecks;
 
-	// Métodos relacionados a inserção de um objeto
+	public Jogo(CadastroCartas cartas, CadastroDecks decks, CadastroDuelistas duelistas,
+			CadastroExtraDecks extradecks) {
+		this.cadCartas = cartas;
+		this.cadDecks = decks;
+		this.cadDuelistas = duelistas;
+		this.cadExtraDecks = extradecks;
+	}
+	////////////// Métodos relacionados a inserção de um objeto //////////////
 
-	public void registrar(Carta carta) throws IdJaCadastradoException, ArrayCheioException, NaoEncontradoException {
-		if (cartas.presente(carta.getId())) {
+	///// Cartas /////
+	public void registrarCarta(Carta carta) throws IdJaCadastradoException, ArrayCheioException, NaoEncontradoException {
+		if (cadCartas.presente(carta.getId())) {
 			throw new IdJaCadastradoException();
 		} else {
-			cartas.cadastrar(carta);
+			cadCartas.cadastrar(carta);
 		}
 	}
 
-	public void fichar(Deck deck) throws IdJaCadastradoException, ArrayCheioException, NaoEncontradoException {
-		if (decks.presente(deck.getId())) {
+	///// Decks /////
+	public void registrarDeck(Deck deck)
+			throws IdJaCadastradoException, ArrayCheioException, NaoEncontradoException, CartaNaoCadastradaException {
+		boolean aux = true;
+		for (int k = 0; k < deck.getBaralho().length && aux == true; k++) {
+			if (deck.getBaralho()[k] != null && !cadCartas.presente(deck.getBaralho()[k].getId())) {
+				aux = false;
+			}
+		}
+		if (aux == false) {
+			throw new CartaNaoCadastradaException();
+		} else {
+			if (cadDecks.presente(deck.getId())) {
+				throw new IdJaCadastradoException();
+			} else {
+				cadDecks.cadastrar(deck);
+			}
+		}
+	}
+
+	///// Duelistas /////
+	public void registrarDuelista(Duelista duelista) throws IdJaCadastradoException, ArrayCheioException, NaoEncontradoException,
+			DeckNaoCadastradoException, ExtraDeckNaoCadastradoException {
+		if (!cadDecks.presente(duelista.getDeck().getId())) {
+			throw new DeckNaoCadastradoException();
+		} else if (!cadExtraDecks.presente(duelista.getExtra().getId())) {
+			throw new ExtraDeckNaoCadastradoException();
+		} else if (cadDuelistas.presente(duelista.getId())) {
 			throw new IdJaCadastradoException();
 		} else {
-			decks.cadastrar(deck);
+			cadDuelistas.cadastrar(duelista);
 		}
 	}
 
-	public void arquivar(Duelista duelista) throws IdJaCadastradoException, ArrayCheioException, NaoEncontradoException {
-		if (duelistas.presente(duelista.getId())) {
-			throw new IdJaCadastradoException();
+	///// ExtraDecks /////
+	public void registrarExtraDeck(ExtraDeck extradeck)
+			throws IdJaCadastradoException, ArrayCheioException, NaoEncontradoException, CartaNaoCadastradaException {
+		boolean aux = true;
+		for (int k = 0; k < extradeck.getExtra().length && aux == true; k++) {
+			if (extradeck.getExtra()[k] != null && !cadCartas.presente(extradeck.getExtra()[k].getId())) {
+				aux = false;
+			}
+		}
+		if (aux == false) {
+			throw new CartaNaoCadastradaException();
 		} else {
-			duelistas.cadastrar(duelista);
+			if (cadExtraDecks.presente(extradeck.getId())) {
+				throw new IdJaCadastradoException();
+			} else {
+				cadExtraDecks.cadastrar(extradeck);
+			}
 		}
 	}
 
-	public void catalogar(ExtraDeck extradeck) throws IdJaCadastradoException, ArrayCheioException, NaoEncontradoException {
-		if (extradecks.presente(extradeck.getId())) {
-			throw new IdJaCadastradoException();
-		} else {
-			extradecks.cadastrar(extradeck);
-		}
-	}
+	////////////// Métodos relacionados a remoção de um objeto //////////////
 
-	// Métodos relacionados a remoção de um objeto
-
-	public void apagar(int id) throws NaoEncontradoException {
-		if (!cartas.presente(id)) {
+	///// Cartas /////
+	public void apagarCarta(int id) throws NaoEncontradoException {
+		if (!cadCartas.presente(id)) {
 			throw new NaoEncontradoException();
 		} else {
-			cartas.retirar(id);
+			cadCartas.retirar(id);
 		}
 	}
 
-	public void arredar(int id) throws NaoEncontradoException {
-		if (!decks.presente(id)) {
+	///// Decks /////
+	public void apagarDeck(int id) throws NaoEncontradoException {
+		if (!cadDecks.presente(id)) {
 			throw new NaoEncontradoException();
 		} else {
-			decks.retirar(id);
+			cadDecks.retirar(id);
 		}
 	}
 
-	public void retrair(int id) throws NaoEncontradoException {
-		if (!duelistas.presente(id)) {
+	///// Duelistas /////
+	public void apagarDuelista(int id) throws NaoEncontradoException {
+		if (!cadDuelistas.presente(id)) {
 			throw new NaoEncontradoException();
 		} else {
-			duelistas.retirar(id);
+			cadDuelistas.retirar(id);
 		}
 	}
 
-	public void tirar(int id) throws NaoEncontradoException {
-		if (!extradecks.presente(id)) {
+	///// ExtraDecks /////
+	public void apagarExtraDeck(int id) throws NaoEncontradoException {
+		if (!cadExtraDecks.presente(id)) {
 			throw new NaoEncontradoException();
 		} else {
-			extradecks.retirar(id);
+			cadExtraDecks.retirar(id);
 		}
 	}
 
-	// Métodos relacionados ao retorno de um objeto procurado
+	////////////// Métodos relacionados ao retorno de um objeto procurado ////////////// 
 
-	public Carta buscar(int id) throws NaoEncontradoException {
-		if (!cartas.presente(id)) {
+	///// Cartas /////
+	public Carta buscarCarta(int id) throws NaoEncontradoException {
+		if (!cadCartas.presente(id)) {
 			throw new NaoEncontradoException();
 		} else {
-			return cartas.buscar(id);
+			return cadCartas.buscar(id);
 		}
 	}
 
-	public Deck rastrear(int id) throws NaoEncontradoException {
-		if (!decks.presente(id)) {
+	///// Decks /////
+	public Deck buscarDeck(int id) throws NaoEncontradoException {
+		if (!cadDecks.presente(id)) {
 			throw new NaoEncontradoException();
 		} else {
-			return decks.buscar(id);
+			return cadDecks.buscar(id);
 		}
 	}
 
-	public Duelista catar(int id) throws NaoEncontradoException {
-		if (!duelistas.presente(id)) {
+	///// Duelistas /////
+	public Duelista buscarDuelista(int id) throws NaoEncontradoException {
+		if (!cadDuelistas.presente(id)) {
 			throw new NaoEncontradoException();
 		} else {
-			return duelistas.buscar(id);
+			return cadDuelistas.buscar(id);
 		}
 	}
 
-	public ExtraDeck fuçar(int id) throws NaoEncontradoException {
-		if (!extradecks.presente(id)) {
+	///// ExtraDecks /////
+	public ExtraDeck buscarExtraDeck(int id) throws NaoEncontradoException {
+		if (!cadExtraDecks.presente(id)) {
 			throw new NaoEncontradoException();
 		} else {
-			return extradecks.buscar(id);
+			return cadExtraDecks.buscar(id);
 		}
 	}
 
-	// Métodos relacionados a atualização de um objeto
+	////////////// Métodos relacionados a atualização de um objeto //////////////
 
-	public void retificar(int id, Carta carta) throws NaoEncontradoException {
-		if (cartas.presente(id)) {
-			cartas.retificar(id, carta);
+	///// Cartas /////
+	public void retificarCarta(int id, Carta carta) throws NaoEncontradoException, IdJaCadastradoException {
+		if (cadCartas.presente(id) && !(cadCartas.presente(carta.getId()))) {
+			cadCartas.retificar(id, carta);
 		} else {
-			throw new NaoEncontradoException();
+			if (cadCartas.presente(carta.getId())) {
+				throw new IdJaCadastradoException();
+			} else {
+				throw new NaoEncontradoException();
+			}
 		}
 	}
 
-	public void remodelar(int id, Deck deck) throws NaoEncontradoException {
-		if (decks.presente(id)) {
-			decks.retificar(id, deck);
+	///// Decks /////
+	public void retificarDeck(int id, Deck deck) throws NaoEncontradoException, IdJaCadastradoException {
+		if (cadDecks.presente(id) && !(cadDecks.presente(deck.getId()))){
+			cadDecks.retificar(id, deck);
 		} else {
-			throw new NaoEncontradoException();
+			if (cadCartas.presente(deck.getId())) {
+				throw new IdJaCadastradoException();
+			} else {
+				throw new NaoEncontradoException();
+			}
 		}
 	}
 
-	public void renovar(int id, Duelista duelista) throws NaoEncontradoException {
-		if (duelistas.presente(id)) {
-			duelistas.retificar(id, duelista);
+	///// Duelistas /////
+	public void retificarDuelista(int id, Duelista duelista) throws NaoEncontradoException, IdJaCadastradoException {
+		if (cadDuelistas.presente(id) && !(cadDuelistas.presente(duelista.getId()))) {
+			cadDuelistas.retificar(id, duelista);
 		} else {
-			throw new NaoEncontradoException();
+			if (cadDuelistas.presente(duelista.getId())) {
+				throw new IdJaCadastradoException();
+			} else {
+				throw new NaoEncontradoException();
+			}
 		}
 	}
 
-	public void alterar(int id, ExtraDeck extradeck) throws NaoEncontradoException {
-		if (extradecks.presente(id)) {
-			extradecks.retificar(id, extradeck);
+	///// ExtraDeck /////
+	public void retificarExtraDeck(int id, ExtraDeck extradeck) throws NaoEncontradoException, IdJaCadastradoException {
+		if (cadExtraDecks.presente(id) && !(cadDuelistas.presente(extradeck.getId()))) {
+			cadExtraDecks.retificar(id, extradeck);
 		} else {
-			throw new NaoEncontradoException();
+			if (cadExtraDecks.presente(extradeck.getId())) {
+				throw new IdJaCadastradoException();
+			} else {
+				throw new NaoEncontradoException();
+			}
 		}
 	}
 
-	// Métodos relacionados a verificar a presença de um objeto
+	////////////// Métodos destinados a verificar a presença de um objeto //////////////
 
-	public boolean tem(int id) throws NaoEncontradoException {
-		if (cartas.presente(id)) {
-			return cartas.presente(id);
+	///// Cartas /////
+	public boolean contemCarta(int id) {
+		if (cadCartas.presente(id)) {
+			return true;
 		} else {
-			throw new NaoEncontradoException();
+			return false;
 		}
 	}
 
-	public boolean esta(int id) throws NaoEncontradoException {
-		if (decks.presente(id)) {
-			return decks.presente(id);
+	///// Decks /////
+	public boolean contemDeck(int id) {
+		if (cadDecks.presente(id)) {
+			return true;
 		} else {
-			throw new NaoEncontradoException();
+			return false;
 		}
 	}
 
-	public boolean contem(int id) throws NaoEncontradoException {
-		if (duelistas.presente(id)) {
-			return duelistas.presente(id);
+	///// Duelistas /////
+	public boolean contemDuelista(int id) {
+		if (cadDuelistas.presente(id)) {
+			return true;
 		} else {
-			throw new NaoEncontradoException();
+			return false;
 		}
 	}
 
-	public boolean incluido(int id) throws NaoEncontradoException {
-		if (extradecks.presente(id)) {
-			return extradecks.presente(id);
+	///// ExtraDecks /////
+	public boolean contemExtraDeck(int id) {
+		if (cadExtraDecks.presente(id)) {
+			return true;
 		} else {
-			throw new NaoEncontradoException();
+			return false;
 		}
 	}
 }
